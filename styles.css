@@ -55,8 +55,8 @@ main {
 .block {
   margin-bottom: 28px;
   padding: 28px;
-  background: var(--surface);
-  border: 1px solid var(--line);
+  /*background: var(--surface);
+  border: 1px solid var(--line);*/
 }
 
 h2 {

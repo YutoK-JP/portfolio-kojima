@@ -12,7 +12,8 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <header class="site-header reveal is-visible" data-animate="up">
+    <header class="siteZsnNpRGR67TRd-header reveal is-visible" data-animate="up">
+        
       <div class="container">
         <p class="tag">PORTFOLIO TEMPLATE</p>
         <h1>Kojima's Portfolio</h1>
@@ -23,17 +24,27 @@
       <section class="block reveal" id="about" data-animate="up">
         <h2>自己紹介</h2>
         <p>
-          高専本科 → 専攻科 → 大学院で情報工学を専攻科。
+          高専本科 → 専攻科 → 大学院で情報工学を専攻科。</br>
+          高専本科でのサークル活動から機械学習の学習を開始。</br>
+          専攻科では、機械学習を用いた画像認識の研究に従事し、学会発表も経験。</br>
+        </p>
+        <p>
+            大学院では、医用画像処理分野でルールベースの手法を研究に取り組み、学会発表も経験。</br>
+            アルバイトでAI開発、先端技術の調査実装を経験。</br>
+        </p>
+        <p>
+            趣味はゲームとアニメで、特にFPSゲームが好きです。</br>
+            休日はゲームに関する開発、blenderなどを利用した個人的な 創作活動を行っています。</br>
         </p>
         <p class="profile-link-line">
           <a
-            href="https://github.com/your-username"
+            href="https://github.com/YutoK-JP"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHubプロフィールを開く"
           >
             <span class="profile-link-icon" aria-hidden="true">GH</span>
-            <span class="profile-link-text">GitHub: github.com/your-username</span>
+            <span class="profile-link-text">GitHub: github.com/YutoK-JP</span>
           </a>
         </p>
       </section>
@@ -44,17 +55,16 @@
           <article class="card reveal" data-animate="up" data-delay="90">
             <h3>技術スタック</h3>
             <ul>
-              <li>言語: JavaScript / TypeScript / Python</li>
-              <li>フロントエンド: React / Next.js</li>
-              <li>バックエンド: Node.js / Express</li>
+              <li>言語: Python, JavaScript</li>
+              <li>その他: Googleクラウド, GAS</li>
             </ul>
           </article>
           <article class="card reveal" data-animate="up" data-delay="180">
             <h3>得意領域</h3>
             <ul>
-              <li>UI設計・実装</li>
-              <li>API設計・開発</li>
-              <li>チーム開発（Git / GitHub）</li>
+              <li>課題解決</li>
+              <li>プロジェクトマネジメント</li>
+              <li>ビジュアルAI, データ分析</li>
             </ul>
           </article>
         </div>
@@ -64,47 +74,52 @@
         <h2>制作物</h2>
         <div class="grid two-col">
           <article class="card reveal" data-animate="up" data-delay="90">
-            <h3>Project A</h3>
-            <p>概要: どんな課題を解決するアプリかを記載。</p>
-            <p>技術: React, Firebase, TypeScript</p>
-            <p>
-              リンク:
-              <a href="#" aria-label="Project AのGitHubリンク">GitHub</a>
-              /
-              <a href="#" aria-label="Project Aのデモリンク">Demo</a>
-            </p>
+            <h3>海ゴミ回収船</h3>
+            <p><b>概要:</b> <br/>海上のゴミを回収するための無人船プロジェクト</p>
+            <p><b>担当:</b> <br/>AIによるゴミ検出アルゴリズムの開発、操縦プログラムの設計</p>
+            <p><b>技術:</b> Python, OpenCV, Jetson Nano</p>
           </article>
           <article class="card reveal" data-animate="up" data-delay="180">
-            <h3>Project B</h3>
-            <p>概要: 担当範囲や工夫点を記載。</p>
-            <p>技術: Next.js, Supabase</p>
+            <h3>学生工場（IWスクエア）運営</h3>
+            <p>
+                <b>概要:</b> <br/>
+                学生主体工場のシステム開発を担当。<br/>
+                利用者の設備予約、講習登録、入退室の記録を一元化したシステムを構築。
+            </p>
+            <p><b>技術:</b> Google Apps Script, Plane web app</p>
+            <img src="img/iwsq_overview.png" alt="IWスクエアシステム図" class="research-image" width="400">
             <p>
               リンク:
-              <a href="#" aria-label="Project BのGitHubリンク">GitHub</a>
-              /
-              <a href="#" aria-label="Project Bのデモリンク">Demo</a>
+              <a href="https://scrapbox.io/iwsq/IW%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%E3%81%AE%E7%B4%B9%E4%BB%8B(%E5%AD%A6%E5%A4%96%E7%94%A8)" aria-label="IWスクエア紹介ページ">紹介ページ</a>
             </p>
           </article>
         </div>
       </section>
 
       <section class="block reveal" id="research" data-animate="up">
-        <h2>大学での研究・活動</h2>
+        <h2>大学での研究</h2>
         <article class="card reveal" data-animate="up" data-delay="120">
-          <h3>研究テーマ / ゼミ活動</h3>
+          <h3>非接触デバイスを用いた生体信号推定（呼吸波形）</h3>
           <p>
-            テーマ例: 「機械学習を用いた〇〇の分析」。研究目的、手法、得られた知見を3〜5行でまとめると評価されやすいです。
+            <b>概要:</b> <br/>
+            深度カメラを用いて、呼吸波形を推定する研究。<br/>
+            患者を撮影しながらリアルタイムで呼吸波形を推定するシステムを構築し、医療現場での活用を目指す。<br>
+            主に推定精度の向上、新規評価手法の提案に取り組む。<br/>
           </p>
-          <p>
-            活動例: 学園祭実行委員、ハッカソン参加、TA経験など。役割と成果を数値で示すと説得力が増します。
-          </p>
+          <img src="img/research_overview.png" alt="研究概要図" class="research-image" width="400"/>
+          <p><b>学会:</b> 
+            <ul>
+                <li>“Breath Waveform Measurement System Using Contact-less Devices” <br/> @IEEE IDAACS 2025 &lt;best paper award&gt; <a href="https://idaacs.net/2025" target="_blank" rel="noopener noreferrer">[Link]</a></p></li>
+                <li>“呼吸波形推定のための新規評価手法の提案” <br/> @電子情報通信学会医用画像研究会 <a href="https://ken.ieice.org/ken/program/index.php?tgs_regid=0af83b4823ff4c4fe24bda4c6d6fd998649fbcf5e6969d1de5ee27c27f91d490&tgid=IEICE-MI#:~:text=%E9%9D%9E%E6%8E%A5%E8%A7%A6%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%82%92%E7%94%A8%E3%81%84%E3%81%9F%E5%91%BC%E5%90%B8%E6%B3%A2%E8%A8%88%E6%B8%AC%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E9%96%8B%E7%99%BA" target="_blank" rel="noopener noreferrer">[Link]</a></p></li>
+            </ul>
+          <p><b>技術:</b> Python, OpenCV, 深度カメラ</p>
         </article>
       </section>
     </main>
 
     <footer class="site-footer reveal" data-animate="up">
       <div class="container">
-        <p>© <span id="year">2026</span> Your Name</p>
+        <p>© <span id="year">2026</span>  Kojima Yuto</p>
       </div>
     </footer>
   </body>
