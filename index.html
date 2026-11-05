@@ -1,126 +1,280 @@
-﻿<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kojima's Portfolio</title>
-    <meta
-      name="description"
-      content="就活向けポートフォリオ。自己紹介、スキル概要、制作物、大学での研究・活動を掲載。"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <header class="siteZsnNpRGR67TRd-header reveal is-visible" data-animate="up">
-        
-      <div class="container">
-        <p class="tag">PORTFOLIO TEMPLATE</p>
-        <h1>Kojima's Portfolio</h1>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>兒島悠飛 / Yuto Kojima — Portfolio</title>
+<meta name="description" content="兒島悠飛（Yuto Kojima）のポートフォリオ。呉高専IWスクエアでの運営基盤づくり（TA / SRE）、広島大学大学院での非接触呼吸計測の研究（IDAACS 2025発表・Sensors論文掲載）、個人開発の概要。">
+<style>
+  :root{
+    --bg:#fafaf8; --surface:#ffffff; --ink:#1c1e21; --muted:#5c6470;
+    --line:#e5e2dc; --accent:#0f6a5c; --accent-soft:#e7f2ef;
+    --chip:#f0eee9; --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",system-ui,sans-serif;
+    line-height:1.75;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  header.site{border-bottom:1px solid var(--line);background:var(--surface)}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0;flex-wrap:wrap;gap:8px}
+  .nav .brand{font-weight:700;letter-spacing:.02em}
+  .nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+  .nav ul a{color:var(--muted);font-size:.92rem}
+  .hero{padding:56px 0 40px}
+  .hero .kicker{color:var(--accent);font-weight:700;letter-spacing:.14em;font-size:.8rem;text-transform:uppercase}
+  .hero h1{font-size:2.3rem;line-height:1.3;margin:.3em 0 .1em}
+  .hero h1 .en{font-size:1.1rem;color:var(--muted);font-weight:600;letter-spacing:.04em}
+  .hero p.lead{font-size:1.03rem;max-width:44em}
+  .hero .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .btn{display:inline-block;padding:8px 16px;border-radius:999px;border:1px solid var(--accent);
+    color:var(--accent);font-size:.92rem;background:var(--surface)}
+  .btn.solid{background:var(--accent);color:#fff}
+  .btn:hover{text-decoration:none;opacity:.88}
+  .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:26px}
+  .pillar{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+  .pillar h3{margin:0 0 4px;font-size:1rem}
+  .pillar p{margin:0;font-size:.9rem;color:var(--muted)}
+  section{padding:40px 0;border-top:1px solid var(--line)}
+  section h2{font-size:1.4rem;margin:0 0 6px}
+  section h2 .en{font-size:.85rem;color:var(--muted);font-weight:600;margin-left:.5em;letter-spacing:.06em}
+  section .sub{color:var(--muted);margin:0 0 22px;max-width:46em}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px 12px}
+  .card h3{margin:0 0 2px;font-size:1rem}
+  .card h3 a{color:var(--ink)}
+  .card h3 a:hover{color:var(--accent)}
+  .card .meta{font-size:.8rem;color:var(--muted);margin-bottom:6px}
+  .card p{margin:0 0 8px;font-size:.92rem}
+  .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:var(--chip);border-radius:999px;padding:2px 10px;font-size:.75rem;color:var(--muted)}
+  .tag.acc{background:var(--accent-soft);color:var(--accent)}
+  .feature{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+  .feature h3{margin-top:0}
+  .feature p{margin:.4em 0}
+  .timeline{list-style:none;margin:0;padding:0}
+  .timeline li{display:flex;gap:16px;padding:8px 0;border-bottom:1px dashed var(--line)}
+  .timeline li:last-child{border-bottom:none}
+  .timeline .year{flex:0 0 92px;font-weight:700;color:var(--accent)}
+  .skills{display:flex;gap:8px;flex-wrap:wrap}
+  .skill{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:.9rem}
+  footer{border-top:1px solid var(--line);padding:26px 0 38px;color:var(--muted);font-size:.88rem}
+  @media (max-width:600px){.hero h1{font-size:1.75rem}.timeline .year{flex-basis:70px}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap nav">
+    <div class="brand">兒島悠飛 / Yuto Kojima</div>
+    <ul>
+      <li><a href="#iwsquare">IW Square</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#skills">Skills</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <div class="kicker">Portfolio — Overview</div>
+  <h1>兒島悠飛 <span class="en">Yuto Kojima</span></h1>
+  <p class="lead">
+    呉高専出身のエンジニア。活動は大きく3つの軸で構成されています。
+    学生のためのものづくりスペース「IWスクエア」の運営基盤づくり（TA / SRE）、
+    広島大学大学院での非接触生体計測の研究、そして日常や実店舗で使われるソフトウェアの個人開発です。
+    共通しているのは、「作って終わり」ではなく、使われ続け、引き継げる形にするところまで担う姿勢です。
+  </p>
+  <div class="pillars">
+    <div class="pillar">
+      <h3>IW Square</h3>
+      <p>呉高専のものづくりスペースでTA / SREとして、予約・入退室・在室記録などの運用システムと引き継ぎの仕組みを構築。</p>
+    </div>
+    <div class="pillar">
+      <h3>Research</h3>
+      <p>深度カメラとAIによる非接触の呼吸波形推定。国際会議IDAACS 2025で発表し、査読誌Sensorsに筆頭著者として論文掲載。</p>
+    </div>
+    <div class="pillar">
+      <h3>Works</h3>
+      <p>Rust製デスクトップツールや、実店舗で使われる在庫・メニュー共有アプリなど、実用を前提とした個人開発。</p>
+    </div>
+  </div>
+  <div class="links">
+    <a class="btn solid" href="https://github.com/YutoK-JP">GitHub: YutoK-JP</a>
+  </div>
+</div>
+
+<section id="iwsquare">
+  <div class="wrap">
+    <h2>IW Square <span class="en">— 運営基盤づくり（TA / SRE）</span></h2>
+    <p class="sub">
+      IWスクエア（インキュベーションスクエア）は、呉工業高等専門学校にある学生のための自由なものづくりスペース（年間利用学生500名超）。
+      TAが運営を担い、私はSRE（Site | System | Square Reliability Engineer）としてIT基盤と運用の仕組みづくりを担当しました。
+      SREの必須要件は「引き継げる → 剥がせる → 捨てられる を意識できること」で、属人化させない設計とドキュメント化が核にあります。
+    </p>
+    <div class="grid">
+      <div class="card">
+        <h3><a href="https://github.com/YutoK-JP/iwsq-reserve">予約システム（iwsq-reserve）</a></h3>
+        <div class="meta">2024 / Next.js, TypeScript</div>
+        <p>講習・設備の予約をWebで完結できるようにした、中心的な担当プロダクト。</p>
+        <div class="tags"><span class="tag acc">SRE</span><span class="tag">Next.js</span></div>
       </div>
-    </header>
-
-    <main class="container">
-      <section class="block reveal" id="about" data-animate="up">
-        <h2>自己紹介</h2>
-        <p>
-          高専本科 → 専攻科 → 大学院で情報工学を専攻科。</br>
-          高専本科でのサークル活動から機械学習の学習を開始。</br>
-          専攻科では、機械学習を用いた画像認識の研究に従事し、学会発表も経験。</br>
-        </p>
-        <p>
-            大学院では、医用画像処理分野でルールベースの手法を研究に取り組み、学会発表も経験。</br>
-            アルバイトでAI開発、先端技術の調査実装を経験。</br>
-        </p>
-        <p>
-            趣味はゲームとアニメで、特にFPSゲームが好きです。</br>
-            休日はゲームに関する開発、blenderなどを利用した個人的な 創作活動を行っています。</br>
-        </p>
-        <p class="profile-link-line">
-          <a
-            href="https://github.com/YutoK-JP"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHubプロフィールを開く"
-          >
-            <span class="profile-link-icon" aria-hidden="true">GH</span>
-            <span class="profile-link-text">GitHub: github.com/YutoK-JP</span>
-          </a>
-        </p>
-      </section>
-
-      <section class="block reveal" id="skills" data-animate="up">
-        <h2>スキル概要</h2>
-        <div class="grid two-col">
-          <article class="card reveal" data-animate="up" data-delay="90">
-            <h3>技術スタック</h3>
-            <ul>
-              <li>言語: Python, JavaScript</li>
-              <li>その他: Googleクラウド, GAS</li>
-            </ul>
-          </article>
-          <article class="card reveal" data-animate="up" data-delay="180">
-            <h3>得意領域</h3>
-            <ul>
-              <li>課題解決</li>
-              <li>プロジェクトマネジメント</li>
-              <li>ビジュアルAI, データ分析</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="block reveal" id="works" data-animate="up">
-        <h2>制作物</h2>
-        <div class="grid two-col">
-          <article class="card reveal" data-animate="up" data-delay="90">
-            <h3>海ゴミ回収船</h3>
-            <p><b>概要:</b> <br/>海上のゴミを回収するための無人船プロジェクト</p>
-            <p><b>担当:</b> <br/>AIによるゴミ検出アルゴリズムの開発、操縦プログラムの設計</p>
-            <p><b>技術:</b> Python, OpenCV, Jetson Nano</p>
-          </article>
-          <article class="card reveal" data-animate="up" data-delay="180">
-            <h3>学生工場（IWスクエア）運営</h3>
-            <p>
-                <b>概要:</b> <br/>
-                学生主体工場のシステム開発を担当。<br/>
-                利用者の設備予約、講習登録、入退室の記録を一元化したシステムを構築。
-            </p>
-            <p><b>技術:</b> Google Apps Script, Plane web app</p>
-            <img src="img/iwsq_overview.png" alt="IWスクエアシステム図" class="research-image" width="400">
-            <p>
-              リンク:
-              <a href="https://scrapbox.io/iwsq/IW%E3%82%B9%E3%82%AF%E3%82%A8%E3%82%A2%E3%81%AE%E7%B4%B9%E4%BB%8B(%E5%AD%A6%E5%A4%96%E7%94%A8)" aria-label="IWスクエア紹介ページ">紹介ページ</a>
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="block reveal" id="research" data-animate="up">
-        <h2>大学での研究</h2>
-        <article class="card reveal" data-animate="up" data-delay="120">
-          <h3>非接触デバイスを用いた生体信号推定（呼吸波形）</h3>
-          <p>
-            <b>概要:</b> <br/>
-            深度カメラを用いて、呼吸波形を推定する研究。<br/>
-            患者を撮影しながらリアルタイムで呼吸波形を推定するシステムを構築し、医療現場での活用を目指す。<br>
-            主に推定精度の向上、新規評価手法の提案に取り組む。<br/>
-          </p>
-          <img src="img/research_overview.png" alt="研究概要図" class="research-image" width="400"/>
-          <p><b>学会:</b> 
-            <ul>
-                <li>“Breath Waveform Measurement System Using Contact-less Devices” <br/> @IEEE IDAACS 2025 &lt;best paper award&gt; <a href="https://idaacs.net/2025" target="_blank" rel="noopener noreferrer">[Link]</a></p></li>
-                <li>“呼吸波形推定のための新規評価手法の提案” <br/> @電子情報通信学会医用画像研究会 <a href="https://ken.ieice.org/ken/program/index.php?tgs_regid=0af83b4823ff4c4fe24bda4c6d6fd998649fbcf5e6969d1de5ee27c27f91d490&tgid=IEICE-MI#:~:text=%E9%9D%9E%E6%8E%A5%E8%A7%A6%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%82%92%E7%94%A8%E3%81%84%E3%81%9F%E5%91%BC%E5%90%B8%E6%B3%A2%E8%A8%88%E6%B8%AC%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E9%96%8B%E7%99%BA" target="_blank" rel="noopener noreferrer">[Link]</a></p></li>
-            </ul>
-          <p><b>技術:</b> Python, OpenCV, 深度カメラ</p>
-        </article>
-      </section>
-    </main>
-
-    <footer class="site-footer reveal" data-animate="up">
-      <div class="container">
-        <p>© <span id="year">2026</span>  Kojima Yuto</p>
+      <div class="card">
+        <h3><a href="https://github.com/YutoK-JP/knct_iw_sq_access_history">入退室システム</a></h3>
+        <div class="meta">2024 / HTML, JavaScript, GAS</div>
+        <p>バーコードで学生番号と利用設備を読み取りスプレッドシートへ記録。専用PCのキオスクモードで常時稼働する運用設計まで担当。</p>
+        <div class="tags"><span class="tag acc">SRE</span><span class="tag">運用設計</span></div>
       </div>
-    </footer>
-  </body>
+      <div class="card">
+        <h3><a href="https://github.com/YutoK-JP/mock_beacon">在室記録（mock_beacon）</a></h3>
+        <div class="meta">2024 / Python</div>
+        <p>Bluetooth疑似ビーコンで端末を検知し、在室を自動記録する常駐スキャナー。</p>
+        <div class="tags"><span class="tag acc">SRE</span><span class="tag">Python</span></div>
+      </div>
+      <div class="card">
+        <h3><a href="https://github.com/YutoK-JP/iwsq_entry_histrory">入退室履歴アプリ</a></h3>
+        <div class="meta">2024 / Python, Flet</div>
+        <p>入退室データをデスクトップ／Webから確認するためのFlet製アプリ。</p>
+        <div class="tags"><span class="tag acc">SRE</span><span class="tag">Flet</span></div>
+      </div>
+      <div class="card">
+        <h3>運用ツール群</h3>
+        <div class="meta">2024–2025 / Python, HTML</div>
+        <p>講習の受講ステータス管理、設備ラベル発行支援、顔登録ツールなど、日常運用の手作業を置き換える小物ツールを継続的に開発。</p>
+        <div class="tags"><span class="tag acc">SRE</span><span class="tag">業務効率化</span></div>
+      </div>
+      <div class="card">
+        <h3>ポータル整備・マニュアル化</h3>
+        <div class="meta">2024–2025 / Scrapbox, Teams</div>
+        <p>ポータルサイトの作成、Teamsの整備、利用方法ページや運営マニュアルの作成など、引き継ぎ可能な情報基盤づくりを担当。</p>
+        <div class="tags"><span class="tag acc">SRE</span><span class="tag">ドキュメント</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Research <span class="en">— 研究</span></h2>
+    <p class="sub">
+      広島大学大学院 先進理工系科学研究科で、深度カメラとAIによる身体検出を用いた非接触の呼吸波形推定を研究しています。
+      CT検査中の患者モニタリングを想定し、装着型呼吸ベルトを参照に、波形の精度や衣服条件の影響まで含めて評価しました。
+    </p>
+    <div class="feature">
+      <h3>Publications</h3>
+      <p>
+        <strong>[Journal]</strong> Yuto Kojima, Toru Higaki, Hirotaka Inoue, Bisser Raytchev, Yanlei Gu, Yuko Nakamura,
+        “Contactless Respiratory Waveform Estimation Using a Depth Camera and AI-Based Body Detection,”
+        <em>Sensors</em>, 26(11), 3476, 2026.
+        DOI: <a href="https://doi.org/10.3390/s26113476">10.3390/s26113476</a>
+      </p>
+      <p>
+        <strong>[Conference]</strong> Yuto Kojima, Toru Higaki, Hirotaka Inoue, Yuko Nakamura,
+        “Breath Waveform Measurement System Using Contact-less Devices,”
+        <em>IDAACS 2025</em> (IEEE International Conference on Intelligent Data Acquisition and Advanced Computing Systems), 2025.
+      </p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3><a href="https://github.com/YutoK-JP/depth-respiration">depth-respiration</a></h3>
+        <div class="meta">2025– / Python, Jupyter, Qt</div>
+        <p>上記の研究の実装。計測用レコーダーUIから、波形の切り出し・正規化・可視化までの解析パイプライン。</p>
+        <div class="tags"><span class="tag acc">研究</span><span class="tag">信号処理</span></div>
+      </div>
+      <div class="card">
+        <h3><a href="https://github.com/YutoK-JP/sr-classificatoin">sr-classificatoin</a></h3>
+        <div class="meta">2022 / Python</div>
+        <p>最初期の公開制作物。SRデータセット処理と分類実験のコード。</p>
+        <div class="tags"><span class="tag acc">初期の実験</span><span class="tag">Python</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <h2>Works <span class="en">— 個人開発</span></h2>
+    <p class="sub">実店舗向けのWebアプリと、日々の作業を軽くするデスクトップツールが中心です。</p>
+    <div class="grid">
+      <div class="card">
+        <h3><a href="https://github.com/YutoK-JP/shisha-flavor">Shisha Flavor Share</a></h3>
+        <div class="meta">2026 / TypeScript, Expo, Firebase</div>
+        <p>シーシャ店向けに、フレーバーの在庫とブレンドを店員と客で共有するアプリ。マルチテナント設計と招待QRによる参加導線まで実装。</p>
+        <div class="tags"><span class="tag">Expo</span><span class="tag">Firebase</span></div>
+      </div>
+      <div class="card">
+        <h3><a href="https://github.com/YutoK-JP/aether-shisha">AETHER</a></h3>
+        <div class="meta">2026 / TypeScript, Expo, Firebase</div>
+        <p>シーシャラウンジ向けのデジタルメニューとスタッフ管理スイート。在庫・ブレンド管理とQR発行を備える。</p>
+        <div class="tags"><span class="tag">Expo</span><span class="tag">店舗DX</span></div>
+      </div>
+      <div class="card">
+        <h3><a href="https://github.com/YutoK-JP/display-switcher">Display Switcher</a></h3>
+        <div class="meta">2026 / Rust</div>
+        <p>Windowsのマルチモニター構成をCLIで保存・復元・切り替え。Stream Deck連携用の.bat自動生成つき。</p>
+        <div class="tags"><span class="tag">Rust</span><span class="tag">CLI</span></div>
+      </div>
+      <div class="card">
+        <h3><a href="https://github.com/YutoK-JP/content-renamer">Theme Comment Writer</a></h3>
+        <div class="meta">2026 / Rust（macOS GUI）</div>
+        <p>音声ファイルのタグからアニメ作品名を検索し、コメントタグへ自動で書き込むGUIアプリ。</p>
+        <div class="tags"><span class="tag">Rust</span><span class="tag">API連携</span></div>
+      </div>
+      <div class="card">
+        <h3><a href="https://github.com/YutoK-JP/vid-voice-clipper">Voice Clipper</a></h3>
+        <div class="meta">2026 / TypeScript（Windows）</div>
+        <p>波形を見ながら動画・音声の複数範囲を切り出すアプリ。外部送信しないローカル完結設計。</p>
+        <div class="tags"><span class="tag">TypeScript</span><span class="tag">音声編集</span></div>
+      </div>
+      <div class="card">
+        <h3><a href="https://github.com/YutoK-JP/OBSJ">OBSJ</a></h3>
+        <div class="meta">2024</div>
+        <p>OBS StudioとWebSocketで連携し、録画をゲームごとに自動でフォルダ分けするアプリ。OBS向け音声アシスタント（obs-voice）の実験も含む。</p>
+        <div class="tags"><span class="tag">OBS</span><span class="tag">WebSocket</span></div>
+      </div>
+      <div class="card">
+        <h3><a href="https://github.com/YutoK-JP/arcade-test">arcade-test</a></h3>
+        <div class="meta">2023 / Python</div>
+        <p>低コストなアーケード筐体を自作するためのコード群。ハードウェア寄りの初期の試作。</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">ハードウェア</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills &amp; Timeline <span class="en">— 技術と歩み</span></h2>
+    <div class="skills" style="margin-bottom:26px">
+      <span class="skill">Python</span>
+      <span class="skill">TypeScript / JavaScript</span>
+      <span class="skill">Rust</span>
+      <span class="skill">Next.js</span>
+      <span class="skill">Expo / React Native</span>
+      <span class="skill">Firebase</span>
+      <span class="skill">Flet</span>
+      <span class="skill">Jupyter / データ解析</span>
+      <span class="skill">Google Apps Script</span>
+      <span class="skill">SRE / 運用設計</span>
+      <span class="skill">ドキュメント設計</span>
+    </div>
+    <ul class="timeline">
+      <li><span class="year">2019</span><span>GitHubでの公開開発を開始</span></li>
+      <li><span class="year">2022</span><span>Pythonによる画像処理・分類の実験コードを公開</span></li>
+      <li><span class="year">2024–2025</span><span>呉高専 IWスクエアでTA / SRE。予約・入退室・在室記録システムと引き継ぎの仕組みを構築</span></li>
+      <li><span class="year">2025</span><span>広島大学大学院に進学し呼吸計測の研究を開始。国際会議IDAACS 2025で発表</span></li>
+      <li><span class="year">2026</span><span>査読誌Sensorsに筆頭著者として論文掲載。店舗向けアプリやRust製ツールの開発を継続</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© Yuto Kojima（兒島悠飛） — GitHub: <a href="https://github.com/YutoK-JP">YutoK-JP</a></p>
+    <p>プロジェクト情報は各GitHubリポジトリの公開情報と、IWスクエアの公開記録、論文情報（DOI: 10.3390/s26113476）をもとに作成しています。</p>
+  </div>
+</footer>
+</body>
 </html>
